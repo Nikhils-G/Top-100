@@ -1,0 +1,110 @@
+Certainly! Here are some more common string functions used in C/C++ for manipulating and analyzing strings.
+
+### 1. **`strlen()`**  
+Returns the length of a string (excluding the null terminator).
+```c
+int length = strlen(str);
+```
+
+### 2. **`strcpy()`**  
+Copies one string to another.
+```c
+char dest[20];
+strcpy(dest, str);
+```
+
+### 3. **`strncpy()`**  
+Copies a specified number of characters from one string to another.
+```c
+char dest[20];
+strncpy(dest, str, 5);  // Copies first 5 characters
+```
+
+### 4. **`strcat()`**  
+Concatenates (appends) one string to another.
+```c
+char str1[20] = "Hello, ";
+char str2[] = "World!";
+strcat(str1, str2);  // str1 becomes "Hello, World!"
+```
+
+### 5. **`strncat()`**  
+Concatenates a specified number of characters from one string to another.
+```c
+strncat(str1, str2, 3);  // Adds first 3 characters of str2 to str1
+```
+
+### 6. **`strcmp()`**  
+Compares two strings and returns 0 if they are equal, a negative value if the first string is less, and a positive value if the second string is less.
+```c
+int result = strcmp(str1, str2);
+```
+
+### 7. **`strncmp()`**  
+Compares the first n characters of two strings.
+```c
+int result = strncmp(str1, str2, 5);  // Compare first 5 characters
+```
+
+### 8. **`strchr()`**  
+Finds the first occurrence of a character in a string.
+```c
+char *ptr = strchr(str, 'o');  // Finds first 'o' in str
+```
+
+### 9. **`strrchr()`**  
+Finds the last occurrence of a character in a string.
+```c
+char *ptr = strrchr(str, 'o');  // Finds last 'o' in str
+```
+
+### 10. **`strstr()`**  
+Finds the first occurrence of a substring in a string.
+```c
+char *ptr = strstr(str, "World");  // Finds "World" in str
+```
+
+### 11. **`sprintf()`**  
+Writes formatted data into a string.
+```c
+char buffer[50];
+sprintf(buffer, "The number is %d", 42);  // "The number is 42"
+```
+
+### 12. **`sscanf()`**  
+Reads formatted input from a string.
+```c
+int num;
+sscanf(str, "Number: %d", &num);  // Reads integer from the string "Number: 42"
+```
+
+### 13. **`strtok()`**  
+Breaks a string into tokens based on a delimiter.
+```c
+char str[] = "apple,banana,grape";
+char *token = strtok(str, ",");
+while (token != NULL) {
+    printf("%s\n", token);
+    token = strtok(NULL, ",");
+}
+```
+
+### 14. **`strdup()`**  
+Allocates memory and copies a string into it (Note: not standard in C, but often available in POSIX systems).
+```c
+char *copy = strdup(str);  // Creates a duplicate of str
+```
+
+### 15. **`memcpy()`**  
+Copies a specified number of bytes from one memory location to another. Useful for copying raw data, including strings.
+```c
+memcpy(dest, str, strlen(str) + 1);  // Copies str to dest including null terminator
+```
+
+### 16. **`memset()`**  
+Fills a memory block with a specified value.
+```c
+memset(str, 'x', 5);  // Fills first 5 characters of str with 'x'
+```
+
+These are some of the most commonly used string functions in C and C++. You can use them in various scenarios, such as manipulating strings, comparing strings, or extracting parts of a string. Let me know if you'd like to dive deeper into any of these!
